@@ -14,6 +14,8 @@ import ryan from './img/eu.jpg';
 import tais from './img/tais.jpg';
 import wly from './img/wly.jpg';
 
+import emailjs from '@emailjs/browser';
+
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -26,7 +28,35 @@ function App() {
   const refSuporte = useRef(null);
   const refSobre = useRef(null);
   const carousel = useRef();
+
   const [width, setWidth] = useState(0);
+
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('');
+
+  function sendEmail(e){
+    e.preventDefault();
+
+    if(email === '' || message === '' ){
+      alert('preencha todos os campos');
+      return;
+    }
+
+    const templateParams = {
+      message: message,
+      email: email
+    }
+    
+    emailjs.send('service_6yoc3fl', 'template_j0h7fzf', templateParams, "G5yGSMGXHPaaRTFBd")
+    .then((response) => {
+      console.log("email enviado", response.status, response.text)
+      setEmail('');
+      setMessage('');
+
+    }, (err) => {
+      console.log("ERRO: ", err)
+    })
+  }
 
   useEffect(() => {
     console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth)
@@ -108,8 +138,24 @@ function App() {
             </h2>
 
             <div className="input-sugestao">
-              <input type="text" id='input-text-sugestao' placeholder='Escreva aqui ...' />
-              <i class="ri-arrow-drop-right-line"></i>
+              <form className='form' onSubmit={sendEmail}>
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Digite seu email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+
+                <textarea
+                  className="textarea"
+                  placeholder="Digite sua mensagem..."
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                />
+
+                <input className="butto" type="submit" value="Enviar"/>
+              </form>
             </div>
           </div>
         </div>
@@ -122,21 +168,21 @@ function App() {
         </div>
         <div className="fundadores">
           <h1 id='h1-fundadores'>Fundadores</h1>
-          
 
-            <div className="app-carousel">
-              <motion.div ref={carousel} className="carousel" whileTap={{ cursor: 'grabbing' }}>
-                <motion.div className='inner' drag="x" dragConstraints={{ right: 0, left: -width }}>
-                  {images.map(image => (
-                    <motion.div className='item' key={image}>
-                      <img src={image} />
-                    </motion.div>
-                  ))}
-                </motion.div>
+
+          <div className="app-carousel">
+            <motion.div ref={carousel} className="carousel" whileTap={{ cursor: 'grabbing' }}>
+              <motion.div className='inner' drag="x" dragConstraints={{ right: 0, left: -width }}>
+                {images.map(image => (
+                  <motion.div className='item' key={image}>
+                    <img src={image} />
+                  </motion.div>
+                ))}
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </div>
+      </div>
 
     </>
   )
