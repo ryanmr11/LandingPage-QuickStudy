@@ -1,0 +1,65 @@
+.book-scene {
+    perspective: 1000px;
+}
+
+.book {
+    position: relative;
+    width: 100vh;
+    height: 70vh;
+    transform-style: preserve-3d;
+}
+
+.book-cover,
+.book-pages {
+    position: absolute;
+    width: 100vh;
+    height: 70vh;
+    border-radius: 25px;
+}
+
+/* Capa da frente */
+.book-cover {
+    background-image: linear-gradient(to right, #112966, #2152CC);
+    transform-origin: left;
+    transform: rotateY(0deg);
+    transition: transform 2.5s ease-in-out;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+/* Animação: abrir o livro */
+.book-cover.open {
+    transform: rotateY(-160deg);
+
+}
+
+.book-cover.open .img-logo{
+    opacity: 0;
+}
+
+/* Páginas internas */
+.book-pages {
+    background: #dbe5ff;
+    display: flex;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    box-shadow: 26px 26px 40px rgba(0, 0, 0, 0.217);
+    
+}
+
+.img-logo{
+    transition: all 1.2s ease;
+}
+
+.book-title.revealed {
+    color: #2a3f7b;
+}
+
+.img-logo{
+    width: 200px;
+}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,15 +9,15 @@
 
 }
 
-body{
+body {
   font-family: 'Poppins', sans-serif;
-  background-image: url(img/fundio.png);
+  background-image: url(img/background.png);
   height: 500vh;
   background-size: cover;
 
 }
 
-.appBar{
+.appBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,26 +25,26 @@ body{
 
 }
 
-.logo-container{
+.logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
 
-.appBar #logo{
+.appBar #logo {
   width: 50px;
   height: 60px;
 
 }
 
-li{
+li {
   list-style: none;
   cursor: pointer;
 
 }
 
-ul{
+ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -53,27 +53,30 @@ ul{
 
 }
 
-.ri-menu-line{
+.ri-menu-line {
   font-size: 30px;
   color: #000;
 
 }
 
-main{
+main {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 100px 150px 0px 100px;
-  height:  75vh;
+  height: 75vh;
 
 }
 
-main span{
-  color: #2152CC;
+main span {
+  background: linear-gradient(90deg, #2d52b1, #0091ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
 
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #537EE4;
   color: #fff;
   padding: 10px 20px;
@@ -86,16 +89,17 @@ main span{
   transition: all 0.3s ease;
 
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
   background-color: #4575e4;
 }
 
-#arrow-right{
+#arrow-right {
   font-size: 40px;
 
 }
 
-#avatar{
+#avatar {
   width: 900px;
   position: absolute;
   right: 0;
@@ -103,13 +107,13 @@ main span{
 
 }
 
-h2{
+h2 {
   font-size: 20px;
   color: #00000058;
 
 }
 
-.line{
+.line {
   height: 3px;
   width: 400px;
   background-color: #2152CC;
@@ -119,23 +123,23 @@ h2{
 
 }
 
-.main-content-1{
+.main-content-1 {
   width: 500px;
   font-size: 25px;
   margin-top: -15vh;
 }
 
-.main-content-1 h2{
+.main-content-1 h2 {
   margin-top: 10px;
 
 }
 
-.main2{
-  height: 100vh; 
-  
+.main2 {
+  height: 100vh;
+
 }
 
-#mascotePremium{
+#mascotePremium {
   position: absolute;
   top: 110%;
   left: 48.6%;
@@ -143,13 +147,13 @@ h2{
 
 }
 
-.h1-premium{
+.h1-premium {
   color: #1B4099;
   text-align: center;
 
 }
 
-.h1-desc{
+.h1-desc {
   color: white;
   text-align: center;
   margin-bottom: 10px;
@@ -158,12 +162,12 @@ h2{
 
 .btn-confira {
   background-color: white;
-  color: #1F5BFF; 
+  color: #1F5BFF;
   font-weight: 700;
   font-size: 1.2rem;
   padding: 0.8rem 3rem;
   border: none;
-  border-radius: 999px; 
+  border-radius: 999px;
   cursor: pointer;
   box-shadow:
     inset -2px -2px 5px #2152CC,
@@ -181,14 +185,14 @@ h2{
     inset 2px 2px 10px #2151cc50;
 }
 
-.content-premium{
+.content-premium {
   position: absolute;
   top: 133%;
   left: 35%;
 
 }
 
-.container-suporte{
+.container-suporte {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -196,27 +200,27 @@ h2{
 
 }
 
-#avatarSuporte{
-  width: 400px; 
+#avatarSuporte {
+  width: 400px;
 }
 
-.content-suporte-2 h1{
+.content-suporte-2 h1 {
   color: #2152CC;
   font-size: 40px;
-  
+
 }
 
-.content-suporte-2 h2{
+.content-suporte-2 h2 {
   color: black;
   margin-bottom: 20px;
 }
 
-#h2-sugestao{
+#h2-sugestao {
   color: #2152CC;
   font-size: 25px;
 }
 
-#input-text-sugestao{
+#input-text-sugestao {
   border: none;
   box-shadow:
     5px 5px 10px 0px rgba(0, 0, 0, 0.317);
@@ -228,7 +232,7 @@ h2{
   font-size: 16px;
 }
 
-p{
+p {
   color: black;
   opacity: 0.6;
   text-decoration: underline;
@@ -236,59 +240,59 @@ p{
   font-size: 20px;
 }
 
-#ult-p{
+#ult-p {
   margin-bottom: 25px;
-  
+
 }
 
 
-.title{
+.title {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  
+
 }
 
-.title .line{
+.title .line {
   width: 100px;
   height: 10px;
 }
 
-.title h1{
+.title h1 {
   color: #1993FF;
-  
+
 }
 
-.redes-sociais{
+.redes-sociais {
   margin-top: 70px;
   display: flex;
   justify-content: center;
   gap: 80px;
   margin-bottom: 70px;
-  
+
 }
 
-.redesQs{
+.redesQs {
   width: 50px;
 }
 
-.email{
+.email {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
   margin-bottom: 70px;
-  
+
 }
 
-.email #icon-email{
+.email #icon-email {
   width: 30px;
   height: 30px;
   margin-top: -6px;
 }
 
-#title-email{
+#title-email {
   color: #2152CC;
   font-weight: 500;
   width: 50px;
@@ -297,72 +301,78 @@ p{
 }
 
 
-.link{
+.link {
   position: relative;
   padding-bottom: 0.75rem;
   color: #000000;
   transition: all 0.3s ease;
 }
 
-.link:hover{
+.link:hover {
   color: #1993FF;
 }
 
-.link::after{
+.link::after {
   content: "";
-    position: absolute;
-    height: 2px;
-    width: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #1993FF;
-    transition: all 0.3s ease;
-    
-  }
-  
-  .link:hover::after{
-    width: 70%;
-    
-  }
-  
-  .sobre{
-    width: 70%;
-  margin: auto;
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #1993FF;
+  transition: all 0.3s ease;
+
+}
+
+.link:hover::after {
+  width: 70%;
+
+}
+
+.sobre {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 
 }
 
 
-.sobre h1{
+.sobre h1 {
   color: #1993FF;
   font-size: 40px;
   margin-bottom: 20px;
 }
 
-.sobre p{
+.sobre p {
   text-decoration: none;
   font-size: 21px;
 }
 
-.fundadores{
+.fundadores {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
-#h1-fundadores{
+#h1-fundadores {
   width: 100px;
   margin: auto;
   color: #1993FF;
 }
 
-.input-sugestao{
+.input-sugestao {
   display: flex;
   align-items: center;
   gap: 20px;
-  
+
 }
 
-.input-sugestao i{
+.input-sugestao i {
   cursor: pointer;
   font-size: 50px;
   color: white;
@@ -371,52 +381,19 @@ p{
   transition: all 0.3s ease;
 }
 
-.input-sugestao i:hover{
+.input-sugestao i:hover {
   background-color: #4575e4;
 
 }
 
-.app-carousel{
-  max-width: 900px;
-  margin: 0 auto;
-  
-}
-
-.inner{
-  display: flex;
-
-}
-
-.item{
-  min-height: 200px;
-  min-width: 400px;
-
-}
-
-.item img{
-  width: 70%;
-  height: 70%;
-  border-radius: 12px;
-  pointer-events: none;
-  border: 10px solid white;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.272);
-
-}
-
-.carousel{
-  cursor: grab;
-  overflow: hidden;
-
-}
-
-.form{
+.form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 
 }
 
-.input{
+.input {
   border: none;
   width: 500px;
   height: 50px;
@@ -426,7 +403,7 @@ p{
   border-radius: 5px;
 }
 
-.textarea{
+.textarea {
   border: none;
   font-size: 16px;
   font-family: 'poppins', sans-serif;
@@ -438,7 +415,7 @@ p{
 
 }
 
-.butto{
+.butto {
   border: none;
   padding: 10px;
   width: 100px;
@@ -457,4 +434,53 @@ p{
   box-shadow:
     inset -2px -2px 6px rgba(0, 0, 0, 0.15),
     inset 2px 2px 10px #ffffff2b;
+}
+
+.seta {
+  width: 100px;
+  transform: rotate(90deg);
+  margin-bottom: -20px;
+
+}
+
+.title-arrow {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  width: 90vw;
+
+}
+
+.saiba1pouco {
+  margin-right: 300px;
+  background: linear-gradient(90deg, #284a9f, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.h1-suporte{
+  background: linear-gradient(90deg, #2a56c5, #00bfff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1993FF;
+  gap: 30px;
+}
+
+.line-gray{
+  height: 10px;
+  width: 100px;
+  background-color: #efefef;
+  border-radius: 10px;
+}
+
+.rodape{
+  background-color: #1993FF;
+  height: 100px;
 }

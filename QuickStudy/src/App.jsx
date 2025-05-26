@@ -3,24 +3,19 @@ import logo from './img/quickstudy.png';
 import avatar1 from './img/avatar1.png';
 import mascote from './img/mascQs.png';
 import avatarSuporte from './img/suporte.png';
-import line from './img/line.png';
 import insta from './img/insta.png';
 import tiktok from './img/ttk.png';
 import ytb from './img/ytb.png';
-import email from './img/email.png';
-import tainara from './img/tainara.jpg';
-import jc from './img/jc.jpg';
-import ryan from './img/eu.jpg';
-import tais from './img/tais.jpg';
-import wly from './img/wly.jpg';
+import emailIcon from './img/email.png';
+import seta from './img/seta.png';
 
 import emailjs from '@emailjs/browser';
 
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
-const images = [ryan, tainara, jc, tais, wly];
+import Book from './components/book/animation.jsx';
+import InfiniteSlider from './components/slider/slider.jsx';
 
 
 function App() {
@@ -34,10 +29,10 @@ function App() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('');
 
-  function sendEmail(e){
+  function sendEmail(e) {
     e.preventDefault();
 
-    if(email === '' || message === '' ){
+    if (email === '' || message === '') {
       alert('preencha todos os campos');
       return;
     }
@@ -46,22 +41,17 @@ function App() {
       message: message,
       email: email
     }
-    
+
     emailjs.send('service_6yoc3fl', 'template_j0h7fzf', templateParams, "G5yGSMGXHPaaRTFBd")
-    .then((response) => {
-      console.log("email enviado", response.status, response.text)
-      setEmail('');
-      setMessage('');
+      .then((response) => {
+        console.log("email enviado", response.status, response.text)
+        setEmail('');
+        setMessage('');
 
-    }, (err) => {
-      console.log("ERRO: ", err)
-    })
+      }, (err) => {
+        console.log("ERRO: ", err)
+      })
   }
-
-  useEffect(() => {
-    console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth)
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-  }, [])
 
   const scrollParapremium = () => {
     secaoRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -120,12 +110,12 @@ function App() {
           </div>
         </div>
 
-        <div className="container-suporte" ref={refSuporte} style={{ scrollMarginTop: '80px' }}>
+        <div className="container-suporte" ref={refSuporte} style={{ scrollMarginTop: '20px' }}>
           <div className="content-suporte-1">
             <img src={avatarSuporte} alt="avatar de suporte " id='avatarSuporte' />
           </div>
           <div className="content-suporte-2">
-            <h1>Central de suporte</h1>
+            <h1 className='h1-suporte'>Central de suporte</h1>
             <h2>Perguntas frequentes:</h2>
 
 
@@ -154,34 +144,48 @@ function App() {
                   value={message}
                 />
 
-                <input className="butto" type="submit" value="Enviar"/>
+                <input className="butto" type="submit" value="Enviar" />
               </form>
             </div>
           </div>
         </div>
 
-        <div className="sobre" ref={refSobre} style={{ scrollMarginTop: '100px' }}>
-          <h1>Sobre</h1>
-          <p>O QuickStudy é um aplicativo interativo de estudos gamificados, criado especialmente para alunos que estão se preparando para vestibulares como ENEM, Fuvest, Unicamp, entre outros. Com uma abordagem divertida e eficiente, o app oferece quizzes, desafios diários, revisão por flashcards e simulados por matéria. Os usuários acumulam pontos, sobem de nível e desbloqueiam conquistas à medida que avançam, tornando o estudo mais leve, motivador e produtivo. Tudo isso com foco no conteúdo mais cobrado nas provas e com relatórios de desempenho personalizados.
+        <div className="sobre" ref={refSobre} style={{ scrollMarginTop: '10px' }}>
 
-          </p>
+          <div className="title-arrow">
+            <img src={seta} alt="seta" className='seta' />
+            <h1 className='saiba1pouco'>Saiba um pouco sobre nós</h1>
+          </div>
+          <Book />
         </div>
         <div className="fundadores">
           <h1 id='h1-fundadores'>Fundadores</h1>
-
-
-          <div className="app-carousel">
-            <motion.div ref={carousel} className="carousel" whileTap={{ cursor: 'grabbing' }}>
-              <motion.div className='inner' drag="x" dragConstraints={{ right: 0, left: -width }}>
-                {images.map(image => (
-                  <motion.div className='item' key={image}>
-                    <img src={image} />
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          </div>
+          <InfiniteSlider />
         </div>
+        <footer>
+          <div className="footer">
+            <div className="line-gray"></div>
+            <h1>Onde nos encontrar</h1>
+            <div className="line-gray"></div>
+          </div>
+
+          <div className="redes-sociais">
+            <a href="https://www.instagram.com/quickstudy_0?igsh=cXgwcjNuaWR5ZTI2" target="_blank" rel="noopener noreferrer">
+            <img src={insta} alt="instagram" className='redesQs' />
+            </a>
+
+            <a href="https://www.youtube.com/@QuickStudy-r2o" target="_blank" rel="noopener noreferrer">
+              <img src={ytb} alt="youtube" className='redesQs' />
+            </a>
+          </div>
+          <div className="email">
+            <img src={emailIcon} alt="" id='icon-email' />
+            <p>quickstudy983@gmail.com</p>
+          </div>
+          <div className="rodape">
+
+          </div>
+        </footer>
       </div>
 
     </>
